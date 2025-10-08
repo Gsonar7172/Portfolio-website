@@ -6,7 +6,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <title>Gayatri Sonar | Portfolio</title>
   <style>
-    /* ✅ Your CSS is unchanged */
     :root {
       --bg-color: #ffffff;
       --text-color: #111111;
@@ -27,7 +26,11 @@
       --shadow-color: rgba(56, 189, 248, 0.3);
       --light-text: #bbbbbb;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--bg-color);
@@ -36,9 +39,16 @@
       scroll-behavior: smooth;
       overflow-x: hidden;
     }
-    a { color: var(--primary-color); text-decoration: none; transition: color 0.3s ease; }
-    a:hover { text-decoration: underline; }
-    /* ✅ Rest of your CSS unchanged */
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* HEADER */
     header {
       background: linear-gradient(90deg, var(--card-bg), var(--bg-color));
       position: sticky;
@@ -50,13 +60,35 @@
       padding: 1rem 3rem;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
       gap: 2rem;
-      width: 100vw;
+      width: 100%;
       transition: background 0.4s ease;
     }
-    .nav-logo { font-weight: bold; font-size: 1.5rem; color: var(--primary-color); position: absolute; left: 3rem; top: 1rem; user-select: none; }
-    nav ul { display: flex; gap: 2rem; list-style: none; }
-    nav ul li a { color: var(--text-color); font-weight: 600; cursor: pointer; padding: 6px 12px; border-radius: 6px; transition: color 0.3s ease, background 0.3s ease; }
-    nav ul li a:hover { background: var(--accent-color); color: var(--btn-text); }
+    .nav-logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+      user-select: none;
+    }
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    nav ul li a {
+      color: var(--text-color);
+      font-weight: 600;
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: color 0.3s ease, background 0.3s ease;
+    }
+    nav ul li a:hover {
+      background: var(--accent-color);
+      color: var(--btn-text);
+    }
     .btn, #theme-toggle {
       border: 2px solid var(--accent-color);
       color: var(--accent-color);
@@ -76,53 +108,188 @@
       transform: translateY(-3px);
       box-shadow: 0 6px 12px var(--shadow-color);
     }
-    main { width: 100vw; }
-    section { width: 100vw; padding: 3rem 0; background-color: var(--card-bg); display: flex; justify-content: center; }
+
+    /* HOME */
+    main { width: 100%; }
+    section { width: 100%; padding: 3rem 0; background-color: var(--card-bg); display: flex; justify-content: center; }
     section:nth-child(even) { background-color: var(--bg-color); }
     section > .content { width: 100%; max-width: 900px; padding: 0 1rem; }
-    h2 { font-size: 1.8rem; border-bottom: 3px solid var(--accent-color); display: inline-block; margin-bottom: 1rem; color: var(--text-color); }
-    #home { height: 100vh; display: flex; align-items: center; justify-content: center; padding: 0 1rem; background: linear-gradient(135deg, var(--bg-color), var(--card-bg)); }
-    .home-container { display: flex; align-items: center; justify-content: space-between; max-width: 1100px; width: 100%; gap: 2rem; }
-    .home-text { flex: 1; max-width: 550px; text-align: left; opacity: 0; transform: translateX(-50px); animation: fadeInLeft 1s ease forwards; }
-    .home-text h1 { font-size: 3rem; margin-bottom: 1.5rem; line-height: 1.3; }
+    h2 {
+      font-size: 1.8rem;
+      border-bottom: 3px solid var(--accent-color);
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: var(--text-color);
+    }
+    #home {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1rem;
+      background: linear-gradient(135deg, var(--bg-color), var(--card-bg));
+    }
+    .home-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1100px;
+      width: 100%;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .home-text {
+      flex: 1;
+      min-width: 280px;
+      text-align: left;
+      opacity: 0;
+      transform: translateX(-50px);
+      animation: fadeInLeft 1s ease forwards;
+    }
+    .home-text h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.3;
+    }
     .home-text h1 span { color: var(--accent-color); font-weight: bold; }
-    .home-text p { font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem; color: var(--light-text); opacity: 0; transform: translateY(30px); animation: fadeInUp 1s ease forwards; animation-delay: 0.5s; }
-    .home-buttons { display: flex; gap: 1rem; }
-    .hero-socials { display: flex; gap: 1.2rem; margin-top: 1.2rem; }
+    .home-text p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      color: var(--light-text);
+    }
+    .home-buttons { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .hero-socials { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
     .hero-socials a { color: #bbb; font-size: 1.4rem; transition: color 0.2s, transform 0.2s; }
     .hero-socials a:hover { color: #f1c40f; transform: scale(1.15); }
-    .btn-resume { animation-delay: 1s; }
-    .btn-projects { animation-delay: 1.2s; }
-    .home-img { flex: 1; text-align: center; opacity: 0; transform: translateX(50px); animation: fadeInRight 1s ease forwards; animation-delay: 0.8s; }
-    .home-img img { width: 340px; height: 340px; border-radius: 50%; border: 6px solid var(--accent-color); box-shadow: 0 12px 25px var(--shadow-color); object-fit: cover; }
-    @keyframes fadeInLeft { to { opacity: 1; transform: translateX(0); } }
-    @keyframes fadeInRight { to { opacity: 1; transform: translateX(0); } }
-    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-    @media (max-width: 768px) { .home-container { flex-direction: column-reverse; gap: 2rem; } .home-text { text-align: left; } }
-    .about-intro-card { display: flex; align-items: center; background: var(--bg-color); border-radius: 12px; padding: 1.5rem; box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12); margin-bottom: 2rem; gap: 1.5rem; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .home-img { flex: 1; text-align: center; }
+    .home-img img {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      border: 6px solid var(--accent-color);
+      box-shadow: 0 12px 25px var(--shadow-color);
+      object-fit: cover;
+    }
+
+    /* ABOUT */
+    .about-intro-card {
+      display: flex;
+      align-items: center;
+      background: var(--bg-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+      margin-bottom: 2rem;
+      gap: 1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      flex-wrap: wrap;
+    }
     .about-intro-card:hover { transform: translateY(-5px); box-shadow: 0 12px 25px var(--shadow-color); }
-    .about-intro-card .intro-img img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 4px solid var(--accent-color); box-shadow: 0 6px 12px var(--shadow-color); }
-    .about-intro-card .intro-text { flex: 1; color: var(--light-text); line-height: 1.6; font-size: 1rem; }
-    .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
-    .about-card { background: var(--bg-color); border-radius: 12px; padding: 1.5rem; box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .about-intro-card .intro-img img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--accent-color);
+      box-shadow: 0 6px 12px var(--shadow-color);
+    }
+    .about-intro-card .intro-text {
+      flex: 1;
+      color: var(--light-text);
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .about-card {
+      background: var(--bg-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
     .about-card:hover { transform: translateY(-5px); box-shadow: 0 12px 25px var(--shadow-color); }
     .about-card h3 { color: var(--primary-color); margin-bottom: 1rem; }
     .about-card ul { list-style: disc; padding-left: 1.2rem; color: var(--light-text); text-align: left; }
     .about-card p { color: var(--light-text); line-height: 1.6; }
-    @media (max-width: 768px) { .about-intro-card { flex-direction: column; text-align: center; } .about-intro-card .intro-text { text-align: center; } }
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; }
-    .project-card { background-color: var(--bg-color); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.12); transition: 0.3s; display: flex; flex-direction: column; }
-    .project-card img { width: 100%; height: 180px; object-fit: cover; transition: transform 0.4s ease; }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+    .project-card {
+      background-color: var(--bg-color);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+      transition: 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
     .project-card:hover { transform: scale(1.05); box-shadow: 0 12px 25px var(--shadow-color); }
     .project-card:hover img { transform: scale(1.1); }
     .project-info { padding: 1rem; flex: 1; }
     .project-link { margin-top: 0.5rem; }
-    footer { text-align: center; padding: 1rem; background: var(--card-bg); font-size: 0.9rem; margin-top: 2rem; border-radius: 8px; max-width: 900px; margin: 2rem auto 0; }
+
+    /* CONTACT */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: var(--card-bg);
+      font-size: 0.9rem;
+      margin-top: 2rem;
+      border-radius: 8px;
+      max-width: 900px;
+      margin: 2rem auto 0;
+    }
+
+    /* ✅ RESPONSIVE FIXES */
+    @media (max-width: 992px) {
+      header { padding: 1rem 2rem; }
+      nav ul { gap: 1rem; }
+    }
+
+    @media (max-width: 768px) {
+      header { flex-wrap: wrap; justify-content: center; }
+      nav ul { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+      .home-container { flex-direction: column-reverse; text-align: center; }
+      .home-text { text-align: center; }
+      .home-img img { width: 240px; height: 240px; }
+      .about-intro-card { flex-direction: column; text-align: center; }
+      .about-intro-card .intro-text { text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      header { flex-direction: column; gap: 1rem; padding: 1rem; }
+      .nav-logo { position: static; }
+      nav ul { flex-direction: column; align-items: center; gap: 0.5rem; }
+      .home-text h1 { font-size: 1.8rem; }
+      .home-text p { font-size: 1rem; }
+      .home-buttons { flex-direction: column; align-items: center; }
+      .btn { padding: 8px 20px; font-size: 0.9rem; }
+      .about-card, .project-card { font-size: 0.95rem; }
+      .project-card img { height: 160px; }
+    }
+
+    @keyframes fadeInLeft { to { opacity: 1; transform: translateX(0); } }
+    @keyframes fadeInRight { to { opacity: 1; transform: translateX(0); } }
   </style>
 </head>
 <body class="dark">
 
-  <!-- Header -->
   <header>
     <div class="nav-logo">Portfolio</div>
     <nav>
@@ -137,55 +304,39 @@
   </header>
 
   <main>
-    <!-- ✅ Home -->
     <section id="home">
       <div class="home-container">
         <div class="home-text">
-          <h1>
-            Hello, 👋 <br>
-            I'm <span>Gayatri Sonar</span> <br>
-            A <span>Web Developer</span>
-          </h1>
-          <p>
-            I create <span>responsive</span>, <span>modern</span>, and <span>user-friendly</span> websites.<br>
-            Passionate about learning new technologies and turning ideas into digital reality.
-          </p>
-
+          <h1>Hello, 👋<br>I'm <span>Gayatri Sonar</span><br>A <span>Web Developer</span></h1>
+          <p>I create <span>responsive</span>, <span>modern</span>, and <span>user-friendly</span> websites.<br>
+            Passionate about learning new technologies and turning ideas into digital reality.</p>
           <div class="hero-socials">
-            <a href="mailto:sonargayatri7172@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.linkedin.com/in/gayatri-sonar-8058b131a" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/Gsonar7172" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.instagram.com/gsonar7172" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:sonargayatri7172@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/gayatri-sonar-8058b131a" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Gsonar7172" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/gsonar7172" target="_blank"><i class="fab fa-instagram"></i></a>
           </div><br>
-
           <div class="home-buttons">
-            <!-- ✅ Fixed Resume Path -->
             <a href="resume.pdf" download="Gayatri_Sonar_Resume.pdf" class="btn btn-resume">📄 View Resume</a>
             <a href="#projects" class="btn btn-projects">🚀 My Projects</a>
           </div>
         </div>
         <div class="home-img">
-          <!-- ✅ Fixed Profile Path -->
           <img src="profile.jpeg" alt="Gayatri Sonar" />
         </div>
       </div>
     </section>
 
-    <!-- ✅ About -->
     <section id="about">
       <div class="content">
         <h2>About Me</h2>
-
         <div class="about-intro-card">
           <div class="intro-img">
-            <!-- ✅ Fixed About Image -->
             <img src="profile.jpeg" alt="Gayatri Sonar" />
           </div>
           <div class="intro-text">
-            <p>
-              As a fresher, I’m eager to build responsive, user-friendly websites while continuously learning new technologies. 
-              I enjoy solving problems, collaborating with teams, and turning ideas into functional digital experiences.
-            </p>
+            <p>As a fresher, I’m eager to build responsive, user-friendly websites while continuously learning new technologies. 
+              I enjoy solving problems, collaborating with teams, and turning ideas into functional digital experiences.</p>
           </div>
         </div>
 
@@ -197,14 +348,14 @@
               <li><strong>Backend:</strong> Node.js, PHP</li>
               <li><strong>Programming:</strong> C, C++</li>
               <li><strong>Database:</strong> MongoDB, MySQL</li>            
-              <li><strong>Soft Skills:</strong> Teamwork, Leadership, Time Management, Communication, Critical Thinking, Problem-Solving</li>
+              <li><strong>Soft Skills:</strong> Teamwork, Leadership, Time Management, Communication, Problem-Solving</li>
               <li><strong>Languages:</strong> English, Hindi, Marathi</li>
             </ul>
           </div>
 
           <div class="about-card">
             <h3>🎓 Education</h3>
-            <p><strong>Bachelor of Computer Application (BCA)</strong> - R.C.Patel Institute of Management Research and Development, Shirpur (2023 – 2026)</p>
+            <p><strong>Bachelor of Computer Application (BCA)</strong> - R.C.Patel Institute of Management Research and Development, Shirpur (2023–2026)</p>
           </div>
 
           <div class="about-card">
@@ -220,57 +371,51 @@
       </div>
     </section>
 
-    <!-- ✅ Projects -->
     <section id="projects">
       <div class="content">
         <h2>Projects</h2>
         <div class="projects-grid">
           <div class="project-card">
-            <!-- ✅ Fixed Project Image -->
-            <img src="amazon-img.png" alt="Amazon-clone Website Screenshot" />
+            <img src="amazon-img.png" alt="Amazon-clone" />
             <div class="project-info">
-              <strong>Amazon-clone Website</strong>
-              <p>I create a simple Amazon-clone website using HTML, CSS, JS and for Backend PHP, MySQL.</p>
+              <strong>Amazon Clone</strong>
+              <p>Built using HTML, CSS, JS and PHP, MySQL for backend.</p>
               <a href="https://github.com/Gsonar7172/Amazon-clone" target="_blank" class="btn project-link">View Project</a>
             </div>
           </div>
           <div class="project-card">
             <img src="pizzabill.jpg" alt="Pizza Bill Generator" />
             <div class="project-info">
-              <strong>Pizza-Bill Generator Application</strong>
-              <p>A simple Java-based console application (Frontend Only) that generates a pizza bill.</p>
-              <a href="https://github.com/Gsonar7172/Pizza-Bill-Generator" class="btn project-link">View Project</a>
+              <strong>Pizza Bill Generator</strong>
+              <p>A Java-based frontend app generating pizza bills.</p>
+              <a href="https://github.com/Gsonar7172/Pizza-Bill-Generator" target="_blank" class="btn project-link">View Project</a>
             </div>
           </div>
           <div class="project-card">
-            <img src="pf.jpg" alt="Portfolio Website Screenshot" />
+            <img src="pf.jpg" alt="Portfolio Website" />
             <div class="project-info">
               <strong>Portfolio Website</strong>
-              <p>This portfolio highlights my projects, skills, and technical expertise in transforming ideas into digital solutions.</p>
-              <a href="https://github.com/Gsonar7172/Portfolio-website" class="btn project-link">View Project</a>
+              <p>This site highlights my projects, skills, and experience.</p>
+              <a href="https://github.com/Gsonar7172/Portfolio-website" target="_blank" class="btn project-link">View Project</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ✅ Contact -->
     <section id="contact">
       <div class="content">
         <h2>Contact</h2><br>
-        <h3><b>Address: </b></h3> <p>Shirpur (425-405), Dist-Dhule, Maharashtra.</p><br>
-
-        <p>Phone No. : <a href="#">8767117172</a></p>
-        <p>Email: <a href="mailto:sonargayatri7172@gmail.com">sonargayatri7172@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/gayatri-sonar-8058b131a" target="_blank">www.linkedin.com/in/gayatri-sonar</a></p>
-        <p>GitHub: <a href="https://github.com/Gsonar7172">github.com/Gsonar7172</a></p>
+        <p><b>Address:</b> Shirpur (425-405), Dist-Dhule, Maharashtra.</p><br>
+        <p><b>Phone:</b> <a href="#">8767117172</a></p>
+        <p><b>Email:</b> <a href="mailto:sonargayatri7172@gmail.com">sonargayatri7172@gmail.com</a></p>
+        <p><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/gayatri-sonar-8058b131a" target="_blank">www.linkedin.com/in/gayatri-sonar</a></p>
+        <p><b>GitHub:</b> <a href="https://github.com/Gsonar7172">github.com/Gsonar7172</a></p>
       </div>
     </section>
   </main>
 
-  <footer>
-    &copy; 2025 Gayatri Sonar. All rights reserved.
-  </footer>
+  <footer>&copy; 2025 Gayatri Sonar. All rights reserved.</footer>
 
   <script>
     const themeToggle = document.getElementById('theme-toggle');
@@ -281,10 +426,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
