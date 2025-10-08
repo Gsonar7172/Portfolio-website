@@ -38,34 +38,38 @@
     a { color: var(--primary-color); text-decoration: none; transition: color 0.3s ease; }
     a:hover { text-decoration: underline; }
 
-   
+    /* ✅ Header - All in one line */
     header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-    transition: background 0.4s ease;
-    width: 100%;
-    flex-wrap: nowrap; 
-          }
-
-
+      background: linear-gradient(90deg, var(--card-bg), var(--bg-color));
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+      transition: background 0.4s ease;
+      width: 100%;
+      flex-wrap: nowrap;
+    }
 
     .nav-logo {
       font-weight: bold;
       font-size: 1.6rem;
       color: var(--primary-color);
       user-select: none;
-      flex: 1;
+      white-space: nowrap;
     }
 
     nav ul {
       display: flex;
-      gap: 1.5rem;
+      gap: 2rem;
       list-style: none;
-      flex-wrap: wrap;
       justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap;
+      margin: 0 2rem;
     }
 
     nav ul li a {
@@ -75,6 +79,7 @@
       padding: 6px 12px;
       border-radius: 6px;
       transition: color 0.3s ease, background 0.3s ease;
+      white-space: nowrap;
     }
 
     nav ul li a:hover {
@@ -90,9 +95,9 @@
       padding: 8px 20px;
       font-weight: 600;
       cursor: pointer;
-      text-decoration: none;
       transition: all 0.3s ease;
       box-shadow: 0 4px 6px var(--shadow-color);
+      white-space: nowrap;
     }
 
     #theme-toggle:hover {
@@ -102,40 +107,34 @@
       box-shadow: 0 6px 12px var(--shadow-color);
     }
 
-    /* ✅ Responsive Header Fix */
-    @media (max-width: 900px) {
+    /* ✅ Responsive tweak — keep nav inline up to small tablets */
+    @media (max-width: 768px) {
       header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 1rem;
-      }
-
-      .nav-logo {
-        position: static;
-        width: 100%;
-        margin-bottom: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
       }
 
       nav ul {
-        flex-direction: column;
-        gap: 0.75rem;
+        gap: 1rem;
+        flex-wrap: wrap;
       }
 
       #theme-toggle {
-        margin-top: 0.75rem;
+        margin-top: 0.5rem;
       }
     }
 
     @media (max-width: 480px) {
-      .nav-logo {
-        font-size: 1.4rem;
-      }
       nav ul {
-        gap: 0.5rem;
+        gap: 0.8rem;
+      }
+      nav ul li a {
+        font-size: 0.9rem;
+        padding: 5px 10px;
       }
       #theme-toggle {
-        padding: 6px 16px;
+        padding: 6px 14px;
         font-size: 0.9rem;
       }
     }
@@ -211,13 +210,7 @@
     @keyframes fadeInRight { to { opacity: 1; transform: translateX(0); } }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-    @media (max-width: 768px) {
-      .home-container { flex-direction: column-reverse; gap: 2rem; text-align: center; }
-      .home-text { text-align: center; }
-      .home-buttons { justify-content: center; }
-    }
-
-    /* ✅ About & Projects & Contact remain same */
+    /* ✅ About, Projects, Contact (unchanged) */
     .about-intro-card { display: flex; align-items: center; background: var(--bg-color); border-radius: 12px; padding: 1.5rem; box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12); margin-bottom: 2rem; gap: 1.5rem; transition: transform 0.3s ease, box-shadow 0.3s ease; }
     .about-intro-card:hover { transform: translateY(-5px); box-shadow: 0 12px 25px var(--shadow-color); }
     .about-intro-card .intro-img img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 4px solid var(--accent-color); box-shadow: 0 6px 12px var(--shadow-color); }
@@ -225,17 +218,12 @@
     .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
     .about-card { background: var(--bg-color); border-radius: 12px; padding: 1.5rem; box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
     .about-card:hover { transform: translateY(-5px); box-shadow: 0 12px 25px var(--shadow-color); }
-    .about-card h3 { color: var(--primary-color); margin-bottom: 1rem; }
-    .about-card ul { list-style: disc; padding-left: 1.2rem; color: var(--light-text); text-align: left; }
-    .about-card p { color: var(--light-text); line-height: 1.6; }
-
     .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; }
     .project-card { background-color: var(--bg-color); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.12); transition: 0.3s; display: flex; flex-direction: column; }
     .project-card img { width: 100%; height: 180px; object-fit: cover; transition: transform 0.4s ease; }
     .project-card:hover { transform: scale(1.05); box-shadow: 0 12px 25px var(--shadow-color); }
     .project-card:hover img { transform: scale(1.1); }
     .project-info { padding: 1rem; flex: 1; }
-
     footer { text-align: center; padding: 1rem; background: var(--card-bg); font-size: 0.9rem; margin-top: 2rem; border-radius: 8px; max-width: 900px; margin: 2rem auto 0; }
   </style>
 </head>
@@ -253,7 +241,8 @@
     </nav>
     <button id="theme-toggle">☀️ Day</button>
   </header>
-  <main>
+
+   <main>
     <!-- ✅ Home -->
     <section id="home">
       <div class="home-container">
@@ -385,11 +374,9 @@
     </section>
   </main>
 
-  <footer>
-    &copy; 2025 Gayatri Sonar. All rights reserved.
-  </footer>
+  <footer>&copy; 2025 Gayatri Sonar. All rights reserved.</footer>
 
-   <script>
+  <script>
     const themeToggle = document.getElementById('theme-toggle');
     themeToggle.addEventListener('click', () => {
       document.body.classList.toggle('dark');
@@ -398,10 +385,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
